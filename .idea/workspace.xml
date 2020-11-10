@@ -11,8 +11,8 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/CameraFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/CameraFragment.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1604990807445</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="타이틀 하단 상단 바 없애기">
+      <created>1604991329103</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1604991329103</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -193,7 +200,8 @@
     <MESSAGE value="네비게이션간 이동 추가" />
     <MESSAGE value="카메라 버튼 레이아웃 수정 및 버튼 리스너 추가" />
     <MESSAGE value="카메라 버튼 클릭스 토스트 출력 및 네비게이션을 통해 프래그먼트 이동" />
-    <option name="LAST_COMMIT_MESSAGE" value="카메라 버튼 클릭스 토스트 출력 및 네비게이션을 통해 프래그먼트 이동" />
+    <MESSAGE value="타이틀 하단 상단 바 없애기" />
+    <option name="LAST_COMMIT_MESSAGE" value="타이틀 하단 상단 바 없애기" />
   </component>
   <component name="WindowStateProjectService">
     <state x="977" y="-1004" key="#com.intellij.ide.util.MemberChooser" timestamp="1604990626784">
@@ -204,10 +212,10 @@
       <screen x="-116" y="-1440" width="2560" height="1440" />
     </state>
     <state x="752" y="-958" key="AndroidCreateResourceFileDialog/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604989337233" />
-    <state x="706" y="-1126" key="CommitChangelistDialog2" timestamp="1604991319905">
+    <state x="706" y="-1126" key="CommitChangelistDialog2" timestamp="1604991328956">
       <screen x="-116" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="706" y="-1126" key="CommitChangelistDialog2/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604991319905" />
+    <state x="706" y="-1126" key="CommitChangelistDialog2/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604991328956" />
     <state x="706" y="-1108" key="CommitChangelistDialog2/0.23.1680.954/-116.-1417.2560.1417@-116.-1417.2560.1417" timestamp="1604988836262" />
     <state width="2518" height="423" key="GridCell.Tab.0.bottom" timestamp="1604990555037">
       <screen x="-116" y="-1440" width="2560" height="1440" />
