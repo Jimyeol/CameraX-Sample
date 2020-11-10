@@ -7,10 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64ad3c9e-e5d7-4579-8392-8b904e2d48e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_camera.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/ImageFragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/cameraxexample/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,24 +144,32 @@
       <option name="project" value="LOCAL" />
       <updated>1604989203415</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="네비게이션 추가">
+      <created>1604989371229</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1604989371229</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
     <MESSAGE value="Gradle 추가 (CameraX, Navigation, Kotlin)" />
     <MESSAGE value="카메라 프리뷰 프래그먼트 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="카메라 프리뷰 프래그먼트 추가" />
+    <MESSAGE value="네비게이션 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="네비게이션 추가" />
   </component>
   <component name="WindowStateProjectService">
     <state x="752" y="-958" key="AndroidCreateResourceFileDialog" timestamp="1604989337233">
       <screen x="-116" y="-1440" width="2560" height="1440" />
     </state>
     <state x="752" y="-958" key="AndroidCreateResourceFileDialog/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604989337233" />
-    <state x="706" y="-1126" key="CommitChangelistDialog2" timestamp="1604989203253">
+    <state x="706" y="-1126" key="CommitChangelistDialog2" timestamp="1604989371079">
       <screen x="-116" y="-1440" width="2560" height="1440" />
     </state>
-    <state x="706" y="-1126" key="CommitChangelistDialog2/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604989203253" />
+    <state x="706" y="-1126" key="CommitChangelistDialog2/0.0.1680.1050/-116.-1440.2560.1440@-116.-1440.2560.1440" timestamp="1604989371079" />
     <state x="706" y="-1108" key="CommitChangelistDialog2/0.23.1680.954/-116.-1417.2560.1417@-116.-1417.2560.1417" timestamp="1604988836262" />
     <state x="764" y="-969" key="Vcs.Push.Dialog.v2" timestamp="1604988843787">
       <screen x="-116" y="-1417" width="2560" height="1417" />
