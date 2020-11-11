@@ -1,0 +1,7 @@
+Executable : /Users/economy/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja
+arguments : 
+-C
+/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/debug/arm64-v8a
+opencv_jni_shared
+jvmArgs : 
+

@@ -31,14 +31,26 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.common.util.concurrent.ListenableFuture;
+
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.Core;
+import org.opencv.core.Mat;
+import org.opencv.core.Size;
+import org.opencv.imgproc.CLAHE;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.ByteArrayOutputStream;
 import java.nio.ByteBuffer;
@@ -51,9 +63,26 @@ public class CameraFragment extends Fragment {
     NavController nav = null;
     ImageButton btnCapture = null;
     PreviewView viewFinder = null;
+    ImageView snapShot = null;
 
     private static final int REQUEST_CODE_CAMERA_PERMISSION = 0x0101;
     private ExecutorService cameraExecutor = Executors.newSingleThreadExecutor();
+
+    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(getContext()) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS:
+                {
+                    Log.i("OpenCV", "OpenCV loaded successfully");
+                } break;
+                default:
+                {
+                    super.onManagerConnected(status);
+                } break;
+            }
+        }
+    };
 
     public CameraFragment() {
         // Required empty public constructor
@@ -72,6 +101,17 @@ public class CameraFragment extends Fragment {
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if (!OpenCVLoader.initDebug()) {
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION, getContext(), mLoaderCallback);
+        }
+        else {
+            mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        }
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_camera, container, false);
@@ -83,6 +123,7 @@ public class CameraFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         btnCapture = (ImageButton)view.findViewById(R.id.btnCapture);
         viewFinder = (PreviewView)view.findViewById(R.id.view_finder);
+        snapShot = (ImageView)view.findViewById(R.id.snapShot);
 
 
 
@@ -167,13 +208,46 @@ public class CameraFragment extends Fragment {
             }
 
             try{
+                Mat src = ExtendMat.toRGB(image);
+
+                // rotate image
+                int rotateDegree = image.getImageInfo().getRotationDegrees();
+                if (rotateDegree == 90) {
+                    Core.rotate(src, src, Core.ROTATE_90_CLOCKWISE);
+                }
+                else if (rotateDegree == 180) {
+                    Core.rotate(src, src, Core.ROTATE_180);
+                }
+                else if (rotateDegree == 270 || rotateDegree == -90) {
+                    Core.rotate(src, src, Core.ROTATE_90_COUNTERCLOCKWISE);
+                }
+
+                // grayscale image
+                Mat gray = new Mat();
+                Imgproc.cvtColor(src, gray, Imgproc.COLOR_RGBA2GRAY);
+
+                // 원본영상 brightness 조정
+
+                CLAHE clahe = Imgproc.createCLAHE(2.0, new Size(8, 8));
+                clahe.apply(gray, gray);
+
+                // 테스트로 edge 표시한 영상 화면에 표시
+                setImage(snapShot, gray);
 
                 nav = Navigation.findNavController(getView());
-                NavDirections directions = CameraFragmentDirections.actionCameraFragmentToImageFragment(toBitmap(image.getImage())).setMyImage(toBitmap(image.getImage()));
+                NavDirections directions = CameraFragmentDirections.actionCameraFragmentToImageFragment(createBitmap(gray)).setMyImage(createBitmap(gray));
                 nav.navigate(directions);
+
+
+
+                //snapShot.setImageURI();
+
+
 
             }catch (Exception e) {
             }
+
+            image.close();
         }
     }
 
@@ -199,6 +273,17 @@ public class CameraFragment extends Fragment {
 
         byte[] imageBytes = out.toByteArray();
         return BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.length);
+    }
+
+    private Bitmap createBitmap(Mat mat) {
+        Bitmap bitmap = Bitmap.createBitmap(mat.cols(), mat.rows(), Bitmap.Config.ARGB_8888);
+        Utils.matToBitmap(mat, bitmap);
+        return bitmap;
+    }
+
+    private void setImage(ImageView target, Mat mat) {
+        Bitmap bitmap = createBitmap(mat);
+        getActivity().runOnUiThread(() -> target.setImageBitmap(bitmap));
     }
 
 }

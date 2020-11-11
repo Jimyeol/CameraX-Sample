@@ -1,2 +1,3 @@
+include ':opencv-sdk'
 include ':app'
 rootProject.name = "CameraXExample"

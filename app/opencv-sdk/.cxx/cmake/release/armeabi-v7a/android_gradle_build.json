@@ -1,0 +1,42 @@
+{
+  "stringTable": {
+    "0": "/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/release/armeabi-v7a",
+    "1": "--target=armv7-none-linux-androideabi21 --gcc-toolchain=/Users/economy/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/economy/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/sysroot -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -fno-addrsig -march=armv7-a -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -Oz -DNDEBUG -fPIC"
+  },
+  "buildFiles": [
+    "/Users/economy/Library/Android/sdk/ndk/20.0.5594570/build/cmake/platforms.cmake",
+    "/Users/economy/Library/Android/sdk/ndk/20.0.5594570/build/cmake/android.toolchain.cmake",
+    "/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/libcxx_helper/CMakeLists.txt"
+  ],
+  "cleanCommands": [
+    "/Users/economy/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/release/armeabi-v7a\" clean"
+  ],
+  "buildTargetsCommand": "/Users/economy/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja  -C \"/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/release/armeabi-v7a\" {LIST_OF_TARGETS_TO_BUILD}",
+  "libraries": {
+    "opencv_jni_shared-Release-armeabi-v7a": {
+      "buildCommand": "/Users/economy/Library/Android/sdk/cmake/3.10.2.4988404/bin/ninja -C \"/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/release/armeabi-v7a\" opencv_jni_shared",
+      "buildType": "release",
+      "toolchain": "849513466",
+      "abi": "armeabi-v7a",
+      "artifactName": "opencv_jni_shared",
+      "files": [
+        {
+          "src": "/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/libcxx_helper/dummy.cpp",
+          "flagsOrdinal": 1,
+          "workingDirectoryOrdinal": 0
+        }
+      ],
+      "headers": [],
+      "output": "/Users/economy/Desktop/IngProj/ocrtest-android/opencv-sdk/.cxx/cmake/release/armeabi-v7a/libopencv_jni_shared.a"
+    }
+  },
+  "toolchains": {
+    "849513466": {
+      "cppCompilerExecutable": "/Users/economy/Library/Android/sdk/ndk/20.0.5594570/toolchains/llvm/prebuilt/darwin-x86_64/bin/clang++"
+    }
+  },
+  "cFileExtensions": [],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}
