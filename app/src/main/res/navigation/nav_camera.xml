@@ -16,7 +16,16 @@
             app:enterAnim="@anim/fragment_fade_enter"
             app:exitAnim="@anim/fragment_fade_exit"
             app:popEnterAnim="@anim/fragment_open_enter"
-            app:popExitAnim="@anim/fragment_open_exit" />
+            app:popExitAnim="@anim/fragment_open_exit" >
+            <argument
+                android:name="myName"
+                app:argType="string"
+                android:defaultValue="Test" />
+            <argument
+                android:name="myImage"
+                app:argType="android.graphics.Bitmap" />
+        </action>
+
     </fragment>
     <fragment
         android:id="@+id/imageFragment"
@@ -25,6 +34,13 @@
         tools:layout="@layout/fragment_image" >
         <action
             android:id="@+id/action_imageFragment_to_cameraFragment"
-            app:destination="@id/cameraFragment" />
+            app:destination="@id/cameraFragment" >
+        </action>
+        <argument
+            android:name="myName"
+            app:argType="string"/>
+        <argument
+            android:name="myImage"
+            app:argType="android.graphics.Bitmap" />
     </fragment>
 </navigation>
